@@ -681,6 +681,7 @@ def authorize_application():
 
 
 @web.route(app.config["LOCAL_OAUTH_HANDLER"], methods=["GET"])
+@crossorigin()
 def oauth_local_handler():
     if not current_user.is_authenticated:
         abort(401)
@@ -714,6 +715,7 @@ def deny_application():
 
 
 @web.route("/oauth/authorize", methods=["GET"])
+@crossorigin()
 @no_cache
 @param_required("client_id")
 @param_required("redirect_uri")
@@ -835,6 +837,7 @@ def request_authorization_code():
 
 
 @web.route("/oauth/authorize/assignuser", methods=["POST"])
+@crossorigin()
 @no_cache
 @param_required("client_id")
 @param_required("redirect_uri")
