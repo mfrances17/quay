@@ -121,3 +121,6 @@ web/cypress/downloads
 # marketplace
 local-dev/stack/quay-marketplace-api.crt
 local-dev/stack/quay-marketplace-api.key
+
+# AI Agent workspace (gitignored)
+.agent/

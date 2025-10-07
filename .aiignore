@@ -1,0 +1,51 @@
+# AI Agent ignore patterns for Quay (Python-based container registry)
+# Minimal ignore list to allow AI agents access to most project files
+
+# Python bytecode and cache (safe to ignore)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py[cod]
+*$py.class
+
+# Python virtual environments (safe to ignore)
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE and editor temporary files
+*.swp
+*.swo
+*~
+.vscode/settings.json
+.idea/workspace.xml
+.idea/tasks.xml
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Large binary files (keep small ones for reference)
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.dmg
+*.iso
+
+# Temporary and log files
+*.tmp
+*.temp
+.tmp/
+.temp/
+
+EOF

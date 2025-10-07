@@ -67,6 +67,12 @@ High-level features include:
 * Security Issues: [security@redhat.com]
 * Community meetings held the first Wednesday of every month 11:00 AM EST: [meeting link](https://meet.google.com/rsj-atvk-zth)
 
+### AI agent
+
+If you're using an AI assistant to help with development in this repository, please prompt it to `> review the repo guidelines` first to ensure it follows the project's conventions and best practices.
+
+Guidelines for user, agent, interaction can be found in [CONTRIBUTING.md](./CONTRIBUTING.md#ai-agent).
+
 [quay-sig@googlegroups.com]: https://groups.google.com/forum/#!forum/quay-sig
 [libera.chat]: https://web.libera.chat/?channel=#quay
 [Red Hat JIRA]: https://issues.redhat.com/projects/PROJQUAY

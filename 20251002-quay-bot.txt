@@ -1,0 +1,52 @@
+PF Resource
+- https://www.npmjs.com/package/@cdcabrera/pf-mcp?activeTab=readme
+
+How to examples
+- https://github.com/cdcabrera/exampleBotRepo
+
+Workflow examples
+- https://github.com/cdcabrera/eslint-config-toolkit
+
+PF React examples
+- https://github.com/cdcabrera/quipucords-ui/tree/20250916-bot
+- https://github.com/cdcabrera/quipucords-ui/tree/20250930-bot
+
+
+Starting prompt
+=====
+
+Prompt >
+```
+Scan the repo guidelines. Do an in-depth index of the entire git history for the master branch, I expect this to take time. Provide me a summary called "What is Quay" under the .agent directory along with a historical record. There should be a section that focuses on how "frontend development" has evolved from the frontend frameworks being used, since that is going to be our focus, providing an agent to help with frontend development tasks specifically for PatternFly development.
+
+And then provide a second summary called "How PatternFly is used in this codebase" of how PatternFly is used in this codebase under .agent
+```
+
+Expected result
+```
+2 detailed documents providing history. One for "what is quay" and the other for "how is PF used"
+```
+
+
+Generate the plan
+====
+
+Prompt >
+```
+I went ahead and provided you 2 resources under .agent/_resources
+- eslint-config-toolkit
+- quipucords-ui
+
+I would like to leverage how they integrate AI agent user/agent workflows into this codebase but I need help determining the best placement since the repo has a odd documentation layout, where it visually seems arbitrarily laid out. I'm sure it makes sense to whomever created it, but as a general user its confusing
+
+I want you to
+- determine the pattern being used for documentation in this repository so we can place AI agent/user workflow and interaction docs without creating disruption to existing docs
+- then create a plan using the quipucords-ui branches "20250916-bot" and "20250930-bot" to integrate PF documentation similar to the "guidelines" directory being used in both of those branches
+
+The general rules I want you to follow
+- We are frontend developer focused. With hopes of leaving a PatternFly, React, and Webpack development set of guidance for agents in the codebase, placed accordingly
+- Use "eslint-config-toolkit" as an example of AI agent simplicity in guideline structure
+- Keep our intended documentation agent agnostic, simple, concise, and clear since multiple AI agents will interact with this documentation
+
+And finally, create the proposed plan document under .agent, named accordingly and we'll work on refining it together.
+```
