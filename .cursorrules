@@ -1,0 +1,60 @@
+# Quay Frontend Development Rules
+
+## Migration Rules
+- Legacy Angular code: located in \static
+- Never modify Angular code
+- Use only for reference (React components, text content, API endpoints)
+- New React code: located in \web\src and all subdirectories
+- All new work must go in \web\src
+
+## General Guidelines
+- Always follow React best practices
+- Always use PatternFly 5 components, and follow PatternFly 5 best practices
+- Reference official docs & demos:
+  - Docs: https://v5-archive.patternfly.org
+  - Components: https://v5-archive.patternfly.org/components/all-components
+- Use previously converted PRs as models for patterns, structure, and best practices
+
+## TypeScript Guidelines
+- Never use the any type, it is bad practice
+- Always attempt to use a proper data type
+
+## Forms
+- Always use react-hook-form for all forms
+- Prefer controlled components with validation through react-hook-form
+- Follow Patternfly form layout and accessibility guidelines
+
+## Styling
+- Prefer Patternfly default styling whenever possible
+- For unique styles, use Patternfly variables/tokens
+- Never use inline styles, or embed styles directly in .ts or .tsx
+- Never create raw .css files for overrides
+
+## API Usage
+- API endpoints are defined in Python files under \endpoints
+- When writing React API calls:
+  - Always check for an existing endpoint before using
+  - Never modify backend code or create new endpoints
+  - Prefer existing client utilities/hooks for requests if available
+
+## Linting & Formatting
+- Respect the existing ESLint/Prettier setup
+- Do not change rules
+- Never fix any linting or Problems pane issues unless explicitly instructed
+
+## Tables
+- Always use the QuayTable component (/web/src/components/QuayTable.tsx) when creating new or modifying existing tables
+- Always adhere to Patternfly best practices for tables
+- Always use the usePaginatedSortableTable hook (/web/src/components/QuayTable.tsx) for adding sort functionality to tables
+- Columns within tables must have sort functionality
+
+## Cypress Tests
+- Tests live in `\web\cypress\e2e`. Add new tests there
+- Follow Cypress best practices and existing test style
+- Use existing e2e tests as models
+- File names must end with `.cy.ts` and be descriptive of the feature
+- Mock API calls using `cy.intercept`, following patterns in existing tests
+- Prefer explicit waits/assertions over arbitrary `cy.wait()` calls
+- Do not refactor or modify existing tests unless asked
+- **CURSOR-SPECIFIC**: When running Cypress tests in Cursor terminal, use `npx cypress@13.15.0` instead of `npx cypress` to avoid macOS security issues
+- **CURSOR-SPECIFIC**: When user asks to "run [test-name]" or "execute [test-name]", automatically run: `cd /Users/mfrances/repositories/mfrances17/quay/web && CLIENT=podman npx cypress@13.15.0 run --spec cypress/e2e/[test-name].cy.ts -b chrome`
